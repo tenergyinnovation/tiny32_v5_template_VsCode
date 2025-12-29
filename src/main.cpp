@@ -4,8 +4,9 @@
  * Hardware     :     tiny32_v5         
  * Author       :     Tenergy Innovation Co., Ltd.
  * Date         :     30/12/2025
- * Revision     :     1.0
+ * Revision     :     1.1
  * Rev1.0       :     Origital
+ * Rev1.1       :     Control Relay with SW1 and SW2 [30-12-2025 00:40]
  * website      :     http://www.tenergyinnovation.co.th
  * Email        :     uten.boonliam@tenergyinnovation.co.th
  * TEL          :     +66 89-140-7205
@@ -17,7 +18,7 @@
 /**************************************/
 /*          Firmware Version          */
 /**************************************/
-String version = "1.0";
+String version = "1.1";
 
 /**************************************/
 /*          Header project            */
@@ -104,6 +105,8 @@ void loop()
         mcu.buzzer_beep(1);
         mcu.TickBlueLED(0.5);
         mcu.TickRedLED(0);
+        mcu.Relay(true);
+        Serial.println("Relay ON");
     }
     else if(mcu.Sw2())
     {
@@ -111,6 +114,8 @@ void loop()
         mcu.buzzer_beep(2);
         mcu.TickRedLED(0.5);
         mcu.TickBlueLED(0);
+        mcu.Relay(false);
+        Serial.println("Relay OFF");
     }
 
     slide_switch_state = mcu.Slid_sw();
