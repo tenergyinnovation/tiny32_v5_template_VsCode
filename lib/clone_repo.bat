@@ -1,40 +1,40 @@
 @echo off
 chcp 65001 >nul
 REM ==============================================================================
-REM 📦 Library Installation Script for tiny32_v3 Project (Windows)
+REM 📦 Library Installation Script for tiny32_v5 Project (Windows)
 REM ==============================================================================
-REM This script clones required libraries for the tiny32_v3 development
+REM This script clones required libraries for the tiny32_v5 development
 REM ==============================================================================
 
 setlocal enabledelayedexpansion
 
 REM Define the repository URLs
-set REPO_URL_TINY32=https://github.com/tenergyinnovation/tiny32_v3.git
+set REPO_URL_TINY32=https://github.com/tenergyinnovation/tiny32_v5.git
 set REPO_URL_DEBOUNCE=https://github.com/wkoch/Debounce.git
 
 echo.
 echo ╔════════════════════════════════════════════════════════════════╗
-echo ║  🚀 Starting Library Installation for tiny32_v3 Project       ║
+echo ║  🚀 Starting Library Installation for tiny32_v5 Project       ║
 echo ╚════════════════════════════════════════════════════════════════╝
 echo.
 
 REM ==============================================================================
-REM Clone tiny32_v3 Library
+REM Clone tiny32_v5 Library
 REM ==============================================================================
-echo 📚 [1/2] Cloning tiny32_v3 library...
+echo 📚 [1/2] Cloning tiny32_v5 library...
 echo    Repository: %REPO_URL_TINY32%
 echo.
 
-if exist "tiny32_v3" (
-    echo ⚠️  Warning: tiny32_v3 directory already exists. Skipping...
+if exist "tiny32_v5" (
+    echo ⚠️  Warning: tiny32_v5 directory already exists. Skipping...
 ) else (
     git clone %REPO_URL_TINY32%
     if errorlevel 1 (
-        echo ❌ Failed to clone tiny32_v3 library
+        echo ❌ Failed to clone tiny32_v5 library
         pause
         exit /b 1
     )
-    echo ✅ tiny32_v3 library cloned successfully!
+    echo ✅ tiny32_v5 library cloned successfully!
 )
 echo.
 
@@ -43,12 +43,12 @@ REM Clone Debounce Library
 REM ==============================================================================
 echo 🎯 [2/2] Cloning Debounce library...
 echo    Repository: %REPO_URL_DEBOUNCE%
-echo    Target: tiny32_v3\src\Debounce\
+echo    Target: tiny32_v5\src\Debounce\
 echo.
 
-cd tiny32_v3\src
+cd tiny32_v5\src
 if errorlevel 1 (
-    echo ❌ Failed to access tiny32_v3\src directory
+    echo ❌ Failed to access tiny32_v5\src directory
     cd ..\..
     pause
     exit /b 1
@@ -78,7 +78,7 @@ echo ║  🎉 Installation Complete! All libraries ready to use! 🎊    ║
 echo ╚════════════════════════════════════════════════════════════════╝
 echo.
 echo 📦 Installed Libraries:
-echo    ✨ tiny32_v3 - Main hardware library
+echo    ✨ tiny32_v5 - Main hardware library
 echo    ✨ Debounce - Button debouncing library
 echo.
 echo 📝 Next Steps:
