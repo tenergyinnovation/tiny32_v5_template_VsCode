@@ -11,8 +11,9 @@
  * TEL          :     +66 89-140-7205
  ***********************************************************************/
 #include <Arduino.h>
-#include <tiny32_v3.h>
+#include <tiny32_v5.h>
 #include <esp_task_wdt.h>
+
 
 /**************************************/
 /*          Firmware Version          */
@@ -41,7 +42,7 @@ Serial.printf("*****************************************************************
 /**************************************/
 /*        define object variable      */
 /**************************************/
-tiny32_v3 mcu;
+tiny32_v5 mcu;
 
 /**************************************/
 /*            GPIO define             */
@@ -79,6 +80,9 @@ void setup()
 {
     Serial.begin(115200);
     header_print();
+
+    mcu.RelayModusRTU_begin(); // Initialize Modbus RTU for Relay control
+
 
     Serial.println("Configuring WDT...");
     esp_task_wdt_init(WDT_TIMEOUT, true); // enable panic so ESP32 restarts

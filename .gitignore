@@ -4,3 +4,10 @@
 .vscode/launch.json
 .vscode/ipch
 /lib/tiny32_v3
+extras/promp_ai.md
+lib/.DS_Store
+lib/tiny32_v5/
+lib/ModbusMaster/
+INTEGRATION_SUMMARY.md
+MODBUS_RELAY_GUIDE.md
+.DS_Store
